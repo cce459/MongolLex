@@ -114,6 +114,22 @@ export class MemStorage implements IStorage {
             english: "I need to take the book."
           }
         ]
+      },
+      {
+        mongolianTraditional: "ᠬᠥᠭᠡᠷᠦᠬᠦᠨ",
+        mongolianCyrillic: "хөөрхөн",
+        korean: "귀엽다, 사랑스럽다",
+        english: "cute, lovely, adorable",
+        pronunciation: "[훠르헌]",
+        partOfSpeech: "형용사",
+        examples: [
+          {
+            mongolianTraditional: "ᠪᠠᠭᠠ ᠬᠦᠦᠬᠡᠳ ᠬᠥᠭᠡᠷᠦᠬᠦᠨ ᠪᠠᠶᠢᠨ᠎ᠠ᠃",
+            mongolianCyrillic: "Бага хүүхэд хөөрхөн байна.",
+            korean: "어린 아이가 귀엽습니다.",
+            english: "The little child is cute."
+          }
+        ]
       }
     ];
 
