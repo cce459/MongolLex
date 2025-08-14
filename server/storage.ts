@@ -130,6 +130,22 @@ export class MemStorage implements IStorage {
             english: "The little child is cute."
           }
         ]
+      },
+      {
+        mongolianTraditional: "ᠤᠯᠤᠰ",
+        mongolianCyrillic: "улс",
+        korean: "나라, 국가",
+        english: "country, nation, state",
+        pronunciation: "[울스]",
+        partOfSpeech: "명사",
+        examples: [
+          {
+            mongolianTraditional: "ᠮᠠᠨᠠᠢ ᠤᠯᠤᠰ ᠢᠶᠡᠨ ᠰᠠᠶᠢᠨ ᠪᠠᠶᠢᠨ᠎ᠠ᠃",
+            mongolianCyrillic: "Манай улс их сайн байна.",
+            korean: "우리나라는 매우 좋습니다.",
+            english: "Our country is very good."
+          }
+        ]
       }
     ];
 
