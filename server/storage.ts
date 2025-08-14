@@ -24,7 +24,7 @@ export class MemStorage implements IStorage {
         mongolianCyrillic: "Монгол улс",
         korean: "몽골, 몽골국",
         english: "Mongolia, Mongolian state",
-        pronunciation: "[몽골 울루스]",
+        pronunciation: "[몽골 울스]",
         partOfSpeech: "명사",
         examples: [
           {
