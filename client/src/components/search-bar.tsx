@@ -27,7 +27,16 @@ export default function SearchBar({ onSearch, initialValue = "", "data-testid": 
 
   // Get suggestions
   const { data: suggestions = [] } = useQuery<DictionaryEntry[]>({
-    queryKey: ['/api/dictionary/search', { q: debouncedValue, limit: 5 }],
+    queryKey: ['/api/dictionary/search', debouncedValue, 5],
+    queryFn: async () => {
+      const params = new URLSearchParams({
+        q: debouncedValue,
+        limit: '5'
+      });
+      const response = await fetch(`/api/dictionary/search?${params}`);
+      if (!response.ok) throw new Error('Failed to fetch suggestions');
+      return response.json();
+    },
     enabled: debouncedValue.length > 0 && showSuggestions,
   });
 

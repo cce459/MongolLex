@@ -16,8 +16,23 @@ export default function Home() {
   // Search entries based on query or letter
   const { data: entries = [], isLoading } = useQuery<DictionaryEntry[]>({
     queryKey: selectedLetter 
-      ? ['/api/dictionary/letter', selectedLetter, { script: scriptType }]
-      : ['/api/dictionary/search', { q: searchQuery, limit: showMore ? 50 : 20 }],
+      ? ['/api/dictionary/letter', selectedLetter, scriptType]
+      : ['/api/dictionary/search', searchQuery, showMore ? 50 : 20],
+    queryFn: async () => {
+      if (selectedLetter) {
+        const response = await fetch(`/api/dictionary/letter/${encodeURIComponent(selectedLetter)}?script=${scriptType}`);
+        if (!response.ok) throw new Error('Failed to fetch');
+        return response.json();
+      } else {
+        const params = new URLSearchParams({
+          q: searchQuery,
+          limit: (showMore ? 50 : 20).toString()
+        });
+        const response = await fetch(`/api/dictionary/search?${params}`);
+        if (!response.ok) throw new Error('Failed to fetch');
+        return response.json();
+      }
+    },
     enabled: true,
   });
 
